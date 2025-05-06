@@ -156,7 +156,7 @@ partial class Program
         Console.BackgroundColor = ConsoleColor.DarkBlue;
         Console.ForegroundColor = ConsoleColor.White;
         var ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!;
-        Console.Write($"BBDown version {ver.Major}.{ver.Minor}.{ver.Build}, Bilibili Downloader.\r\n");
+        Console.Write($"BBDown version {ver.Major}.{ver.Minor}.{ver.Build} LongName, Bilibili Downloader.\r\n");
         Console.ResetColor();
         Console.Write("遇到问题请首先到以下地址查阅有无相关信息：\r\nhttps://github.com/nilaoda/BBDown/issues\r\n");
         Console.WriteLine();
