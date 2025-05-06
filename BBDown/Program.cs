@@ -19,6 +19,7 @@ using BBDown.Core.Util;
 using System.Text.Json.Serialization;
 using System.CommandLine.Builder;
 using BBDown.Core.Entity;
+using System.Text;
 
 namespace BBDown;
 
