@@ -895,7 +895,8 @@ partial class Program
             };
             result = result.Replace(m.Value, v);
         }    
-        result = Encoding.ASCII.GetString(Encoding.ASCII.GetBytes(result).Take(240).ToArray());
+        
+        result = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(result).Take(240).ToArray());     
         LogDebug("Format Truncated Result: " + result);
         if (!result.EndsWith(".mp4")) { result += ".mp4"; }
         return result;
