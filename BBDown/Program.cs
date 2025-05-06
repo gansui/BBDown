@@ -870,9 +870,11 @@ partial class Program
                 }
             }
 
+            string newTitle = GetValidFileName(title, filterSlash: true).Trim().TrimEnd('.').Trim();
+            newTitle = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(newTitle).Take(200).ToArray());
             var v = key switch
             {
-                "videoTitle" => GetValidFileName(title, filterSlash: true).Trim().TrimEnd('.').Trim(),
+                "videoTitle" => newTitle,
                 "pageNumber" => p.index.ToString(),
                 "pageNumberWithZero" => p.index.ToString().PadLeft(pagesCount.ToString().Length, '0'),
                 "pageTitle" => GetValidFileName(p.title, filterSlash: true).Trim().TrimEnd('.').Trim(),
@@ -896,7 +898,7 @@ partial class Program
             result = result.Replace(m.Value, v);
         }    
         
-        result = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(result).Take(240).ToArray());     
+        result = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(result).Take(245).ToArray());     
         LogDebug("Format Truncated Result: " + result);
         if (!result.EndsWith(".mp4")) { result += ".mp4"; }
         return result;
