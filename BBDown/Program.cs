@@ -893,8 +893,8 @@ partial class Program
                 _ => $"<{key}>"
             };
             result = result.Replace(m.Value, v);
-        }
-        result = result.Length > 50 ? result.Substring(0, 50) : result;
+        }    
+        result = Encoding.ASCII.GetString(Encoding.ASCII.GetBytes(result).Take(240).ToArray());
         LogDebug("Format Truncated Result: " + result);
         if (!result.EndsWith(".mp4")) { result += ".mp4"; }
         return result;
