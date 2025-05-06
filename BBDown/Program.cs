@@ -280,8 +280,6 @@ partial class Program
         }
 
         string title = vInfo.Title;
-        title = vInfo.Title.Length > 20 ? vInfo.Title.Substring(0, 20) : vInfo.Title;
-        LogDebug("Format Truncated Title: " + title);
         long pubTime = vInfo.PubTime;
         LogColor("视频标题: " + title);
         if (pubTime != 0)
@@ -896,6 +894,8 @@ partial class Program
             };
             result = result.Replace(m.Value, v);
         }
+        result = result.Length > 240 ? result.Substring(0, 240) : result;
+        LogDebug("Format Truncated Result: " + result);
         if (!result.EndsWith(".mp4")) { result += ".mp4"; }
         return result;
     }
