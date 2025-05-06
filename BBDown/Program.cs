@@ -871,7 +871,7 @@ partial class Program
             }
 
             string newTitle = GetValidFileName(title, filterSlash: true).Trim().TrimEnd('.').Trim();
-            newTitle = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(newTitle).Take(200).ToArray());
+            newTitle = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(newTitle).Take(211).ToArray());
             var v = key switch
             {
                 "videoTitle" => newTitle,
