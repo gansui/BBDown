@@ -280,7 +280,7 @@ partial class Program
         }
 
         string title = vInfo.Title;
-        title = vInfo.Title.Length > 120 ? vInfo.Title.Substring(0, 120) : vInfo.Title;
+        title = vInfo.Title.Length > 20 ? vInfo.Title.Substring(0, 20) : vInfo.Title;
         LogDebug("Format Truncated Title: " + title);
         long pubTime = vInfo.PubTime;
         LogColor("视频标题: " + title);
