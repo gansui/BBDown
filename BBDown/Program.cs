@@ -894,7 +894,7 @@ partial class Program
             };
             result = result.Replace(m.Value, v);
         }
-        result = result.Length > 240 ? result.Substring(0, 240) : result;
+        result = result.Length > 50 ? result.Substring(0, 50) : result;
         LogDebug("Format Truncated Result: " + result);
         if (!result.EndsWith(".mp4")) { result += ".mp4"; }
         return result;
